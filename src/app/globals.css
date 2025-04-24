@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: 'GothamThin';
+    src: url('/fonts/Gotham/thin/Gotham-Thin.woff2') format('woff2'),
+         url('/fonts/Gotham/thin/gotham-thin-webfont.woff2') format('woff');
+    font-weight: 100; /* Thin */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GothamUltra';
+    src: url('/fonts/Gotham/ultra/gotham-ultra-webfont.woff2') format('woff2'),
+         url('/fonts/Gotham/ultra/gotham-ultra-webfont.woff') format('woff');
+    font-weight: 900; /* Ultra */
+    font-style: normal;
+  }
+
+
+  @font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham/xlight/gotham-xlight-webfont.woff2') format('woff2'),
+         url('/fonts/Gotham/xlight/gotham-xlight-webfont.woff2') format('woff');
+    font-weight: 200; /* Extra Light */
+    font-style: normal;
+  }
+
+
+  @font-face {
+    font-family: 'GothamBlack';
+    src: url('/fonts/Gotham/black/gotham-black-webfont.woff2') format('woff2'),
+         url('/fonts/Gotham/black/gotham-black-webfont.woff') format('woff');
+    font-weight: 800; /* Black */
+    font-style: normal;
+  }
+ 
+
+  @font-face {
+    font-family: 'GothamBold';
+    src: url('/fonts/Gotham/bold/gotham-bold-webfont.woff2') format('woff2'),
+         url('/fonts/Gotham/bold/gotham-bold-webfont.woff') format('woff');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GothamBook';
+    src: url('/fonts/Gotham/book/gotham-book-webfont.woff2') format('woff2'),
+         url('/fonts/Gotham/book/gotham-book-webfont.woff') format('woff');
+    font-weight: 300; /* Book (Regular) */
+    font-style: normal;
+  }
+
+
+  @font-face {
+    font-family: 'GothamLight';
+    src: url('/fonts/Gotham/light/gotham-light-webfont.woff2') format('woff2'),
+         url('/fonts/Gotham//light/gotham-light-webfont.woff') format('woff');
+    font-weight: 300; /* Light */
+    font-style: normal;
+    font-display: swap;
+  }
+
+
+  @font-face {
+    font-family: 'GothamMedium';
+    src: url('/fonts/Gotham/medium/gotham-medium-webfont.woff2') format('woff2'),
+         url('/fonts/Gotham/medium/gotham-medium-webfont.woff') format('woff');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+  }
+
+  /* Apply Gotham Book globally */
+body {
+    font-family: 'GothamBook', sans-serif;
+  }
+  
+/* Hide scrollbar but allow scrolling */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* For IE and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+
+
+/* globals.css */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
