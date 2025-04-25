@@ -1,4 +1,4 @@
-import JobDetails from "@/components/Jobs/jobDetails";
+import JobDetails from "@/components/jobs/jobDetails";
 
 const JobPage = ({ params }) => {
 
