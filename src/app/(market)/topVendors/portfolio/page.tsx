@@ -15,10 +15,10 @@ import { useState } from 'react';
 const Mystore = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-    const handleCreateProduct = (product: { name: string; price: string }) => {
-        console.log('Product Created:', product);
-        // Here you can add your logic to handle the created product, e.g., send it to an API
-      };
+    // const handleCreateProduct = (product: { name: string; price: string }) => {
+    //     console.log('Product Created:', product);
+    
+    //   };
 
   return (
     <div className='mx-10'>
@@ -77,7 +77,7 @@ const Mystore = () => {
             <CreateProductModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
-                onCreateProduct={handleCreateProduct}
+                // onCreateProduct={handleCreateProduct}
             />
             </div>
         {/* </div> */}

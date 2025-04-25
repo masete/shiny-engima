@@ -1,4 +1,4 @@
-import SetQuantity from "@/components/Products/SetQuantity";
+// import SetQuantity from "@/components/Products/SetQuantity";
 import { Product } from "@/lib/types";
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
@@ -78,9 +78,9 @@ export const CartContextProvider =(props : Props)=>{
     )=>{
         let updatedCart;
 
-        if(product.quantity === 99){
-            return toast.error("Oops! Maximum Reached")
-        }
+        // if(product.quantity === 99){
+        //     return toast.error("Oops! Maximum Reached")
+        // }
 
         if(cartProducts){
             updatedCart = [...cartProducts]
@@ -88,9 +88,9 @@ export const CartContextProvider =(props : Props)=>{
             const existingIndex = cartProducts.findIndex(
                 (item)=> item.id === product.id)
 
-            if(existingIndex > -1){
-                updatedCart[existingIndex].quantity = ++updatedCart[existingIndex].quantity
-            }
+            // if(existingIndex > -1){
+            //     updatedCart[existingIndex].quantity = ++updatedCart[existingIndex].quantity
+            // }
 
             setCartproduct(updatedCart)
             localStorage.setItem('marketplacecartitems', JSON.stringify(updatedCart))

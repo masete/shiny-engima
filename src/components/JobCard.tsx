@@ -37,7 +37,7 @@ export default function ProductTile({ job }: { job: Job }) {
         {/* Price */}
         <div className="flex items-center mt-2 text-sm">
           <span className="font-light">UGX</span>
-          <span className="ml-2 font-semibold">{job.salary}</span>
+          {/* <span className="ml-2 font-semibold">{job.salary}</span> */}
         </div>
       </div>
     </div>

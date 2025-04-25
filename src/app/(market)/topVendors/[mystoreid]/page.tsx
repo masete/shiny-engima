@@ -11,10 +11,10 @@ import CreateProductModal from '@/components/Products/CreateProductModal'
 const Mystore = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-    const handleCreateProduct = (product: { name: string; price: string }) => {
-        console.log('Product Created:', product);
-        // Here you can add your logic to handle the created product, e.g., send it to an API
-      };
+    // const handleCreateProduct = (product: { name: string; price: string }) => {
+    //     console.log('Product Created:', product);
+   
+    //   };
 
   return (
     <div className='mx-10'>
