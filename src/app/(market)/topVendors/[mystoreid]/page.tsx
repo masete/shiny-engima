@@ -1,7 +1,6 @@
 "use client"
 
 import BarTopVendors from '@/components/Products/BarTopVendors'
-// import { Selection } from '@/components/Products/Selection'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { FaEdit, FaPlus } from 'react-icons/fa'
