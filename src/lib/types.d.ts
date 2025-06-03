@@ -220,7 +220,7 @@ export interface FormData {
   email: string;
   profesion?: string;
   campus_id: number;
-  w_campus?:string;
+  // w_campus?:string;
   cell_no: string;
   business_name: string;
   phone_number: string;

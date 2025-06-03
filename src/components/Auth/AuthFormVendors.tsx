@@ -33,9 +33,6 @@ const AuthForm = ({ type }: { type: "register" | "login" }) => {
   });
 
 
-
-
-
   // fetch profession
   useEffect(() => {
     const loadSkills = async () => {
