@@ -236,3 +236,20 @@ export interface FormData {
   password: string;
  
 }
+
+export type SelectedImgType = {
+  color: string;
+  image: string;
+};
+
+// inside ProductDetails.tsx
+export type CartProductType = {
+  id: string;
+  title: string;
+  selectedImg: {
+    color: string;
+    image: string;
+  };
+  // other fields
+};
+

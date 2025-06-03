@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { CartProductType, SelectedImgType } from "./ProductDetails"
+import { CartProductType, SelectedImgType } from "@/lib/types" 
+// from "./ProductDetails"
+
 
 interface Imageprops{
     cartProduct: CartProductType;
