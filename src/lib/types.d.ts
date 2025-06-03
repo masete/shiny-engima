@@ -238,6 +238,7 @@ export interface FormData {
 }
 
 export type SelectedImgType = {
+  colorCode: Background<string | number> | undefined;
   color: string;
   image: string;
 };

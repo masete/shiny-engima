@@ -1,4 +1,5 @@
-import { CartProductType, SelectedImgType } from "./ProductDetails"
+// import { CartProductType, SelectedImgType } from "./ProductDetails"
+import { CartProductType, SelectedImgType } from "@/lib/types" 
 
 interface SetColorProps {
     images: SelectedImgType[],
