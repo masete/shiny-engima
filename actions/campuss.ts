@@ -11,7 +11,6 @@ export const fetchCampusses = async (): Promise<Campuss[]> => {
 export const fetchSkills = async (): Promise<Skill[]> => {
     const data = await getApiResponse("/public/get-skills");
     return data;
-
 };
 
 export const fetchIndustry = async (): Promise<Industry[]> => {

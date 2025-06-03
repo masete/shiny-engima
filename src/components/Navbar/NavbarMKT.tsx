@@ -34,6 +34,14 @@ const Navbar = ({ onMenuClick, isMobileMenuOpen }: NavbarProps) => {
           </Link>
         </div>
 
+         {/* Mobile Menu Button */}
+         <button
+            className="md:hidden p-2 rounded-full hover:bg-gray-200"
+            onClick={onMenuClick}
+          >
+            <Menu size={24} />
+          </button>
+
         {/* Search Bar - Hidden on smaller screens */}
         <div className="hidden md:flex flex-1 ml-60">
           <SearchBar />
@@ -42,14 +50,6 @@ const Navbar = ({ onMenuClick, isMobileMenuOpen }: NavbarProps) => {
         {/* Profile & Mobile Menu Button */}
         <div className="flex items-center gap-4">
           <Profile />
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 rounded-full hover:bg-gray-200"
-            onClick={onMenuClick}
-          >
-            <Menu size={24} />
-          </button>
         </div>
       </div>
 
@@ -61,36 +61,39 @@ const Navbar = ({ onMenuClick, isMobileMenuOpen }: NavbarProps) => {
       )}
     </div>
 
-    <div>
-    <div className="flex items-center justify-center gap-4 text-black">
-      <Link href="/">
-        <div
-          className={`cursor-pointer px-3 py-1 rounded-md text-center whitespace-nowrap ${
-            selected === "products"
-              ? "text-blue-500 font-medium"
-              : "text-black hover:text-blue-500"
-          }`}
-          onClick={() => setSelected("products")}
-        >
-          <h6 className="text-xl font-bold sm:text-base">Products & Services</h6>
+    {/* <div> */}
+    <div className="w-full px-2 py-0 bg-gray-100">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-black">
+          <Link href="/">
+            <div
+              className={`cursor-pointer px-2 py-1 sm:px-3 sm:py-1 rounded-md text-center ${
+                selected === "products"
+                  ? "text-blue-500 font-semibold"
+                  : "text-black hover:text-blue-500"
+              }`}
+              onClick={() => setSelected("products")}
+            >
+              <h6 className="text-base sm:text-sm font-bold">Products & Services</h6>
+            </div>
+          </Link>
+
+          {/* Divider */}
+          <span className="hidden sm:block text-gray-400 text-sm">|</span>
+
+          <Link href="/jobs">
+            <div
+              className={`cursor-pointer px-2 py-1 sm:px-3 sm:py-1 rounded-md text-center ${
+                selected === "jobs"
+                  ? "text-blue-500 font-semibold"
+                  : "text-black hover:text-blue-500"
+              }`}
+              onClick={() => setSelected("jobs")}
+            >
+              <h6 className="text-base sm:text-sm font-bold">Available Jobs</h6>
+            </div>
+          </Link>
         </div>
-      </Link>
-      <span className="hidden sm:block text-gray-400">|</span> {/* Divider for better separation */}
-      <Link href="/jobs">
-        <div
-          className={`cursor-pointer px-3 py-1 rounded-md text-center whitespace-nowrap ${
-            selected === "jobs"
-              ? "text-blue-500 font-medium"
-              : "text-black hover:text-blue-500"
-          }`}
-          onClick={() => setSelected("jobs")}
-        >
-          <h6 className="text-xl font-bold sm:text-base">Available Jobs</h6>
-        </div>
-      </Link>
-    </div>
-    </div>
-   
+       </div>
 
     </div>
 

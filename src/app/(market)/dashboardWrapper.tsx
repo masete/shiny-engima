@@ -2,10 +2,10 @@
 
 import "../globals.css";
 import { useState, useEffect, useRef } from "react";
-import { Toaster } from "react-hot-toast";
+// import { Toaster } from "react-hot-toast";
 import CartProvider from "../../../providers/CartProvider";
 import Navbar from "@/components/Navbar/NavbarMKT";
-import Rightnav from "@/components/Rightnav";
+// import Rightnav from "@/components/Rightnav";
 import SideNav from '@/components/SideNav/side-nav'
 import StoreProvider from "../redux";
 
@@ -37,7 +37,8 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) =>{
 
 
 return (
-  <html lang="en" className="!scroll-smooth bg-[#EFEFEF]">
+  <html lang="en" className="!scroll-smooth bg-gray-100" >
+    {/*bg-[#EFEFEF]*/}
     <body>
         {/* <Toaster
           toastOptions={{

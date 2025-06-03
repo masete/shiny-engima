@@ -119,7 +119,7 @@ export const NavItems = (): NavItemType[] => {
           className="w-24 h-auto md:w-28"
         />
       ),
-      href: '/',
+      href: '#',
       icon: <Menu size={30} />,
       position: 'top',
     },

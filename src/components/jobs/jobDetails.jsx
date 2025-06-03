@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Banner from "../Products/Bar";
 
 const JobDetails = ({ id }) => {
   const [job, setJob] = useState(null);
@@ -46,6 +47,18 @@ const JobDetails = ({ id }) => {
 
   return (
     <div className="container mx-auto px-4 py-8">
+
+       {/* <div className='mx-6 my-4'> */}
+             <Banner 
+               title="Back" 
+               showAllText="" 
+               bgColor="#FFFFFF" 
+               textColor="#000" 
+               borderColor="#FFFFFF" 
+               showChevron={false}
+             />
+        {/* </div> */}
+
       <h1 className="text-2xl font-bold mb-6">{job.heading}</h1>
       <img
         src={job.image_link}

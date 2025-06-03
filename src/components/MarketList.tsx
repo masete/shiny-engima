@@ -69,7 +69,7 @@
 
 "use client";
 
-import ProductCard from './ProductCard';
+import ProductCard from './Products/ProductCard';
 import { Product } from '@/lib/types';
 import { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';

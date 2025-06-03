@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useCreateProductMutation, useGetProductsCategoriesQuery } from '@/state/api';
 
@@ -33,6 +34,14 @@ const CreateProductModal: React.FC<CreateProductModalProps> = ({ isOpen, onClose
 
     try {
       await createProduct(formData).unwrap();
+
+      // Clear form
+      setProductName('');
+      setProductPrice('');
+      setProductCategory('');
+      setProductDetails('');
+      setImages([]);
+
       onClose();
     } catch (error) {
       console.error('Error creating product:', error);
@@ -52,21 +61,21 @@ const CreateProductModal: React.FC<CreateProductModalProps> = ({ isOpen, onClose
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-6 shadow-lg w-2/3">
-        <div className="flex items-center justify-between h-8 px-2 bg-blue-900">
-          <h2 className="text-xs text-white font-bold">Add product to your portfolio</h2>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 overflow-auto p-4">
+      <div className="bg-white p-6 shadow-lg w-full max-w-2xl">
+        <div className="flex items-center justify-between h-10 px-2 bg-blue-900 rounded-t-md">
+          <h2 className="text-sm text-white font-bold">Add product to your portfolio</h2>
           <button
             type="button"
             onClick={onClose}
-            className="px-2 text-xs text-white rounded-md hover:bg-red-600"
+            className="px-2 text-sm text-white rounded-md hover:bg-red-600"
           >
             X
           </button>
         </div>
 
         <form onSubmit={handleSubmit} className="mt-4 space-y-4">
-          <div className="flex space-x-4">
+          <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
             <div className="flex-1">
               <label className="block text-sm font-medium text-gray-700">Product Name</label>
               <input
@@ -90,7 +99,7 @@ const CreateProductModal: React.FC<CreateProductModalProps> = ({ isOpen, onClose
             </div>
           </div>
 
-          <div className="flex space-x-4">
+          <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
             <div className="flex-1">
               <label className="block text-sm font-medium text-gray-700">Product Category</label>
               <select
@@ -125,7 +134,7 @@ const CreateProductModal: React.FC<CreateProductModalProps> = ({ isOpen, onClose
           {/* Image Upload Section */}
           <div>
             <label className="block text-sm font-medium text-gray-700">Upload Images</label>
-            <div className="flex space-x-4 mt-1">
+            <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 mt-2">
               {[0, 1, 2].map((index) => (
                 <div className="flex-1" key={index}>
                   <label className="block text-xs text-gray-700">
@@ -146,7 +155,7 @@ const CreateProductModal: React.FC<CreateProductModalProps> = ({ isOpen, onClose
           <div className="flex justify-center">
             <button
               type="submit"
-              className="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-[#4BB3FD]"
+              className="px-4 py-1 bg-blue-900 text-white hover:bg-[#4BB3FD] md:px-6 md:py-2"
               disabled={isLoading}
             >
               {isLoading ? 'Submitting...' : 'SUBMIT'}
@@ -159,4 +168,3 @@ const CreateProductModal: React.FC<CreateProductModalProps> = ({ isOpen, onClose
 };
 
 export default CreateProductModal;
-

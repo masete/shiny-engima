@@ -1,6 +1,6 @@
-"use client"
-
+'use client'
 import BarTopVendors from '@/components/Products/BarTopVendors'
+import { Selection } from '@/components/Products/Selection'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { FaEdit, FaPlus } from 'react-icons/fa'
@@ -22,7 +22,7 @@ const Mystore = () => {
         <div className='pt-1'>
            <BarTopVendors title='My Store' showChevron={false} showAllText='' bgColor='#012F6B' /> 
         </div>
-        
+
         <div className="relative bg-white h-[160px] my-2 p-4">
                     {/* Profile Information */}
                     <div className="flex space-x-4">
@@ -62,27 +62,28 @@ const Mystore = () => {
                 {/* <div className="mt-1"> */}
                     <div className="flex items-center space-x-4 justify-end">
                     <button className="bg-[#4BB3FD] text-white p-2 text-xs">Follow</button>
-                    <button
-                        onClick={() => setIsModalOpen(true)}
-                        className="flex items-center bg-[#4BB3FD] p-2 text-white text-xs space-x-2">
+                    <button 
+                    onClick={() => setIsModalOpen(true)}
+                    className="flex items-center bg-[#4BB3FD] p-2 text-white text-xs space-x-2">
                         <FaPlus />
                         <span>Add Product</span>
                     </button>
-                        <MdOutlineMailOutline size={30} />
-                        <MdOutlinePhone size={30} />
-                        <CreateProductModal
-                            isOpen={isModalOpen}
-                            onClose={() => setIsModalOpen(false)}
-                            // onCreateProduct={handleCreateProduct}
-                        />
+                    <MdOutlineMailOutline size={30} />
+                    <MdOutlinePhone size={30} />
+                    <CreateProductModal
+                        isOpen={isModalOpen}
+                        onClose={() => setIsModalOpen(false)}
+                        // onCreateProduct={handleCreateProduct}
+                    />
                     </div>
                 {/* </div> */}
                 </div>
+          
+          
         <div className='flex justify-between bg-white h-8 p-1'>
             <Link href='/topVendors/mystore'><div>My Info</div></Link>
             <Link href='/topVendors/portfolio'><div>My Portfolio</div></Link>
             <Link href='/topVendors/myreviws'><div>My Reviws</div></Link>
-            
         </div>
         <div className='bg-white my-2'>
             <h2 className='p-6 text-sm'>I am an art director, graphic designer, and web designer and I am dedicated to helping you 

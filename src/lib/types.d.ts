@@ -212,22 +212,25 @@ export interface Industry {
 
 export interface FormData {
   password: string;
-  surname?: string;
-  f_name?: string;
-  phone_number?: string;
+  contact_person_surname: string;
+  contact_person_f_name: string;
+  contact_person_phone_number: string;
+  contact_person_l_name: string;
+  contact_person_email: string;
   email: string;
-  profesion: string;
-  w_campus: string;
+  // profesion: string;
+  campus_id: number;
   cell_no: string;
   business_name: string;
-  business_phone: string;
+  phone_number: string;
   business_email: string;
-  business_location: string;
-  industry: string;
-  ursb_reg: string
+  about_business: string;
+  address: string;
+  industry_id: number;
+  registration_no: string;
   surname?: string;
   f_name?: string;
-  phone_number?: string;
+ // phone_number?: string;
   email: string;
   password: string;
  

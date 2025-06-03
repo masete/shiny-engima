@@ -1,6 +1,7 @@
 "use client"
 
 import BarTopVendors from '@/components/Products/BarTopVendors'
+// import { Selection } from '@/components/Products/Selection'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { FaEdit, FaPlus } from 'react-icons/fa'
@@ -13,7 +14,7 @@ const Mystore = () => {
 
     // const handleCreateProduct = (product: { name: string; price: string }) => {
     //     console.log('Product Created:', product);
-   
+    //     // Here you can add your logic to handle the created product, e.g., send it to an API
     //   };
 
   return (

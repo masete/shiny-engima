@@ -2,7 +2,7 @@
 
 import BarTopVendors from '@/components/Products/BarTopVendors'
 import Link from 'next/link'
-// import React from 'react'
+import { Product } from '@/lib/types';
 import { FaPlus } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { MdOutlinePhone } from "react-icons/md";
@@ -10,14 +10,40 @@ import { FaEdit } from "react-icons/fa";
 import { FcRating } from "react-icons/fc";
 import CreateProductModal from '@/components/Products/CreateProductModal'
 import { useState } from 'react';
+import { products } from '@/utils/products';
+import ProductCard from '@/components/Products/ProductCard';
 
 
 const Mystore = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
+    const fetchProduct = async (productid: string): Promise<Product> => {
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/public/ business-configuration/get-my-store
+`,
+          {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify({ id: productid }),
+        });
+    
+        if (!res.ok) throw new Error('Failed to fetch product');
+        const data = await res.json();
+        return data as Product;
+      } catch (error) {
+        console.error("Error fetching product:", error);
+        throw error;
+      }
+    };
+    
+   
     // const handleCreateProduct = (product: { name: string; price: string }) => {
     //     console.log('Product Created:', product);
-    
+    //     // Here you can add your logic to handle the created product, e.g., send it to an API
     //   };
 
   return (
@@ -93,17 +119,24 @@ const Mystore = () => {
         <div className='bg-white my-2'>
             <div className='flex flex-row'>
                 <div>
-                    <img src='/assets/hero.png' width={100} height={50}/>
-                </div>
-                <div className='flex-row'>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-            <div>
+                        <img src='/assets/hero.png' width={100} height={50}/>
+                    </div>
+                        <div className='flex-row'>
+                            <div><p>portfolio</p></div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full px-2">
+                                    {Array.isArray(products) && products.map((product: Product) => (
+                                    <Link key={product.id} href={`/products/${product.id}`}>
+                                        <ProductCard product={product} />
+                                    </Link>
+                                    ))}
+                            </div>
+                            {/* <div></div> */}
+                            </div>
+                        </div>
+                    <div>
 
+                </div>
             </div>
-        </div>
     </div>
   )
 }
