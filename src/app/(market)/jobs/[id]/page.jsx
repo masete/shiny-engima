@@ -1,4 +1,4 @@
-import JobDetails from "../../../../components/jobs/jobDetails";
+import JobDetails from "@/components/jobs/jobDetails";
 
 const JobPage = ({ params }) => {
   // console.log("we are coming");

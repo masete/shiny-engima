@@ -218,7 +218,7 @@ export interface FormData {
   contact_person_l_name: string;
   contact_person_email: string;
   email: string;
-  // profesion: string;
+  profesion?: string;
   campus_id: number;
   cell_no: string;
   business_name: string;
