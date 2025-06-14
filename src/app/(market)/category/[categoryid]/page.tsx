@@ -62,7 +62,7 @@ const CategoryPage = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <CatMotionBar/>
+      {/* <CatMotionBar/> */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full px-2">
         {products.map((product) => (
           <Link key={product.id} href={`/products/${product.id}`}>

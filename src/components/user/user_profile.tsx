@@ -29,6 +29,14 @@ const Profile = () => {
         setDropdownOpen(false);
     };
 
+    const handleLogout = () => {
+        sessionStorage.removeItem("access_token");
+        sessionStorage.removeItem("refresh_token");
+        setUser(null); // clear user state
+        setDropdownOpen(false);
+        router.push("/option");
+    };
+
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             const dropdown = document.getElementById("profile-dropdown");
@@ -58,7 +66,7 @@ const Profile = () => {
             try {
                 const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
                 const endpoint = "/auth/user/me";
-                
+
                 const res = await fetch(`${baseUrl}${endpoint}`, {
                     method: "GET",
                     headers: {
@@ -84,33 +92,31 @@ const Profile = () => {
     return (
         <div className="mb-4 ml-3 gap-2 md:gap-6 flex flex-wrap items-center bg-gray-100 pt-2 px-4 md:px-6 lg:px-8">
             <div className="flex items-center space-x-3 md:space-x-4">
-              
-                <FaRegHeart size={20} className="text-black hover:text-blue-500 cursor-pointer"/>
+                <FaRegHeart size={20} className="text-black hover:text-blue-500 cursor-pointer" />
                 <Link href={'/cart'}>
                     <ShoppingCart size={20} className="text-black hover:text-blue-500 cursor-pointer" />
                 </Link>
                 {user && (
-                <Link href={'/topVendors/portfolio'}>
-                    <BsShop className="text-black text-lg md:text-xl" />
-                </Link>
-            )}
-        
+                    <Link href={'/topVendors/portfolio'}>
+                        <BsShop className="text-black text-lg md:text-xl" />
+                    </Link>
+                )}
             </div>
 
             <div className="relative flex items-center">
                 <div className="border-2 rounded-full cursor-pointer flex items-center" onClick={toggleDropdown}>
-                    <Image 
-                        src={user ? "/profilepic1.jpg" : "/user.svg"} 
-                        alt="User icon" 
-                        width={40} 
-                        height={40} 
+                    <Image
+                        src={user ? "/profilepic1.jpg" : "/user.svg"}
+                        alt="User icon"
+                        width={40}
+                        height={40}
                         className="border-2 border-white rounded-full bg-blue-900 object-cover w-10 h-10 md:w-10 md:h-10"
                     />
                 </div>
 
                 {dropdownOpen && (
-                    <div 
-                        id="profile-dropdown" 
+                    <div
+                        id="profile-dropdown"
                         className="absolute right-0 mt-20 w-48 bg-white border rounded-lg shadow-lg z-50"
                     >
                         {user ? (
@@ -123,7 +129,7 @@ const Profile = () => {
                                 </button>
                                 <button
                                     className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-200"
-                                    onClick={() => handleRedirect("/logout")}
+                                    onClick={handleLogout}
                                 >
                                     Logout
                                 </button>

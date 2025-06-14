@@ -92,7 +92,7 @@ return (
               </div>
 
               {/* Content */}
-              <div className="p-4">{children}</div>
+              <div className="p-0">{children}</div>
             </div>
 
             {/* Rightnav - Commented out */}

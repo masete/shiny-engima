@@ -14,7 +14,7 @@ export default function ProductTile({ job }: { job: Job }) {
       onClick={() => router.push(`/product/${job.id}`)} // Navigate to product detail page
     >
       {/* Product Image */}
-      <div className="overflow-hidden aspect-auto h-[150px] w-[180px]">
+      <div className="overflow-hidden aspect-auto h-[50px] w-[100px]">
         <img
           src={job.image_link} // Ensure the correct image field is used
           alt={job.name} // Use either title or name

@@ -1,4 +1,5 @@
 // import SetQuantity from "@/components/Products/SetQuantity";
+import SetQuantity from "@/components/Products/SetQuantity";
 import { Product } from "@/lib/types";
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
@@ -21,6 +22,8 @@ interface Props{
 export const CartContextProvider =(props : Props)=>{
     const [cartTotalQty, SetCartTotalQty] = useState(10)
     const [cartProducts, setCartproduct] = useState<Product[] | null>(null)
+    // const [quantity, setQuantity] = useState<number>(1);
+
 
     useEffect(()=>{
         const cartItems: any = localStorage.getItem('marketplacecartitems')

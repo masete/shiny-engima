@@ -6,7 +6,7 @@ import React from 'react'
 const TopVendors = () => {
   return (
     <div>
-        <Selection/>
+        {/* <Selection/> */}
         <div className='mx-10 mt-10'>
            <BarTopVendors title='Top 20 Rated Vendors' showChevron={false} showAllText='' /> 
         </div>

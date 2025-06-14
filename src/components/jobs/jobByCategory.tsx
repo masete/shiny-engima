@@ -26,7 +26,7 @@ const JobsByCategory: React.FC<JobsByCategoryProps> = ({ category }) => {
             <img
               src={job.image_link}
               alt={job.heading}
-              className="h-40 w-full object-cover rounded-t-md" />
+              className="h-10 w-20 object-cover rounded-t-md" />
 
             <p className="text-gray-600 text-sm my-2">{job.details}</p>
             <p className="text-sm">

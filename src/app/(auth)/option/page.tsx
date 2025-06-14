@@ -57,7 +57,8 @@ const AuthForm = () => {
           </div>
 
           <div className="flex flex-col items-center space-y-4">
-            <Link href="/buyer/register">
+            {/* <Link href="/buyer/register"> */}
+            <Link href="/buyer/login">
                 <button className="flex items-center px-6 py-3 bg-white text-black font-semibold border-[1px] border-gray-200 shadow-md space-x-4 hover:bg-blue-100 transition">
                     <div className="flex-shrink-0">
                     {/* Replace with your actual icon */}
@@ -69,7 +70,8 @@ const AuthForm = () => {
                     </div>
                 </button>
             </Link>
-            <Link href="/vendor/vsignup">
+            {/* <Link href="/vendor/vsignup"> */}
+            <Link href="/vendor/vlogin">
                 <button className="flex items-center px-6 py-3 bg-white text-black font-semibold border-[1px] border-gray-200 shadow-md space-x-4 mt-3 hover:bg-blue-100 transitio">
                     <div className="flex-shrink-0">
                     {/* Replace with your actual icon */}
@@ -80,7 +82,7 @@ const AuthForm = () => {
                         <h6 className="text-sm mt-1 text-gray-500">Buy, Learn & Network with people</h6>
                     </div>
                 </button>
-                </Link>
+            </Link>
             </div>
 
           <p className="text-center mt-6">

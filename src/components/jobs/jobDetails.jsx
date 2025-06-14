@@ -46,16 +46,16 @@ const JobDetails = ({ id }) => {
   if (error) return <div className="text-center text-red-500 mt-10">Error: {error}</div>;
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-1 my-12">
 
        {/* <div className='mx-6 my-4'> */}
              <Banner 
                title="Back" 
-               showAllText="" 
-               bgColor="#FFFFFF" 
-               textColor="#000" 
+               showAllText="Application" 
+               bgColor="#004C97" 
+               textColor="#FFFFFF" 
                borderColor="#FFFFFF" 
-               showChevron={false}
+               showChevron={true}
              />
         {/* </div> */}
 
@@ -63,7 +63,7 @@ const JobDetails = ({ id }) => {
       <img
         src={job.image_link}
         alt={job.heading}
-        className="w-full h-64 object-cover rounded-lg mb-6"
+        className="w-20 h-10 object-cover rounded-lg mb-6"
       />
       <p className="text-lg mb-4"><strong>Details:</strong> {job.details}</p>
       <p className="text-lg mb-4"><strong>Price:</strong> UGX {job.price.toLocaleString()}</p>

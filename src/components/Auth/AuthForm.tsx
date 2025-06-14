@@ -111,8 +111,11 @@ const AuthForm = ({ type }: { type: "register" | "login" }) => {
           console.log("Login successful:", result);
 
           sessionStorage.setItem("access_token", result.access_token);
+          sessionStorage.setItem("user_type", result.user_type);
           const storedToken = sessionStorage.getItem("access_token");
+          const storedUsertype = sessionStorage.getItem("user_type");
           console.log("Stored Access Token:", storedToken);
+          console.log("stored user type",storedUsertype )
 
           router.push("/");
         } else {
@@ -311,7 +314,7 @@ const AuthForm = ({ type }: { type: "register" | "login" }) => {
                 <span className="text-blue-600 font-semibold">Log In</span>
               </Link>
             ) : (
-              <Link href="/option">
+              <Link href="/buyer/register">
                 Don’t have an account?{" "}
                 <span className="text-blue-600 font-semibold">Sign Up</span>
               </Link>

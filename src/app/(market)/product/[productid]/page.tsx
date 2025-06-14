@@ -9,6 +9,10 @@ import { useCart } from '@/hooks/useCart';
 import { MdCheckCircle } from 'react-icons/md' 
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { FiShoppingCart } from 'react-icons/fi';
+// import ProductCard from '@/components/Products/ProductCard';
+// import { useParams } from 'next/navigation'; 
+
 
 
 const Horizontal = () => <hr className='w-[30%] my-2' />;
@@ -43,10 +47,18 @@ const fetchProduct = async (productid: string): Promise<Product> => {
 };
 
 const ProductDetails = ({ params }: ProductDetailsProps) => {
+
+    // const { categoryid } = useParams();
+  // let category = categoryid.toString();
+  // const categoryIndex = category.indexOf("_"); 
+  // const catId = category.substring(0, categoryIndex); 
+  // const title = decodeURIComponent(category.substring(categoryIndex + 1)); 
+
   const {handleAddProductToCart, cartProducts} = useCart();
   const [isProductInCart, setIsProductInCart] = useState(false)
   // const { cartTotalQty } = useCart(10);
   const [product, setProduct] = useState<Product | null>(null);
+  //   const [products, setProducts] = useState<Product[]>([]);
 
   const router = useRouter()
 
@@ -78,6 +90,55 @@ const ProductDetails = ({ params }: ProductDetailsProps) => {
 
 console.log("use cart", cartProducts)
   if (!product) return <div>Loading...</div>;
+
+
+
+//  useEffect(() => {
+//     if (catId) {
+//       // console.log("Fetching products for category ID:", catId);
+
+//       const fetchProductsByCategory = async () => {
+//         try {
+//           const response = await fetch(
+//             `${process.env.NEXT_PUBLIC_API_BASE_URL}/public/get-service-or-product-by-category`,
+//             {
+//               method: 'POST',
+//               headers: {
+//                 'Content-Type': 'application/json',
+//                 Accept: 'application/json',
+//               },
+//               body: JSON.stringify({ category_id: Number(catId) }),
+//             }
+//           );
+
+//           if (!response.ok) {
+//             console.error("Failed to fetch products. Status:", response.status);
+//             return;
+//           }
+
+//           const data = await response.json();
+//           // console.log("Full response data:", data); 
+
+//           // Check if data is an array
+//           if (Array.isArray(data)) {
+//             // console.log("Products array fetched yes:", data); 
+//             setProducts(data); // Set products directly
+//           } else {
+//             console.warn("Expected an array but received:", data);
+//             setProducts([]); // Set an empty array if the data is not as expected
+//           }
+//         } catch (error) {
+//           console.error("Error fetching products:", error);
+//         }
+//       };
+
+//       fetchProductsByCategory();
+//     }
+//   }, [categoryid]);
+
+
+
+
 
   return (
     <div>
@@ -142,20 +203,30 @@ console.log("use cart", cartProducts)
               </> : <>
               <div className="w-full max-w-[300px]">
                 <button
-                  className="w-full bg-blue-950 text-white h-12 border-2 border-white hover:bg-blue-800 transition-all"
+                  className="w-full bg-blue-950 text-white h-12 border-2 border-white hover:bg-blue-800 transition-all flex items-center justify-center gap-2"
                   onClick={() => handleAddProductToCart(product)}
                 >
+                  <FiShoppingCart className="text-lg" />
                   Add to Cart
                 </button>
               </div>
+
               </>}
           </div>
         </div>
       </div>
-        
-       
+      
+                  {/* <div className="flex flex-col items-center">
+                  
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full px-2">
+                          {products.map((product) => (
+                            <Link key={product.id} href={`/products/${product.id}`}>
+                              <ProductCard product={product} />
+                            </Link>
+                          ))}
+                        </div>
+                      </div> */}
       </div>
-    
       
       <Footer />
     </div>

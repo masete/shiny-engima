@@ -16,8 +16,8 @@ const CatMotionBar = () => {
         <Link
           key="all"
           href="/"
-          className={`px-2 py-1 rounded-lg shadow-sm transition-all duration-300 ${
-            pathname === "/" ? "bg-blue-600 text-white" : "bg-white text-gray-800 hover:bg-gray-200"
+          className={`px-2 py-0 shadow-sm transition-all duration-300 ${
+            pathname === "/" ? "bg-blue-600 text-white" : "bg-white text-gray-800 hover:bg-gray-200 transition-all duration-300 ease-in-out transform"
           }`}
         >
           All
@@ -36,8 +36,10 @@ const CatMotionBar = () => {
             <Link
               key={category.id}
               href={`/category/${encodeURIComponent(`${category.id}_${category.name}`)}`}
-              className={`px-2 py-1 rounded-lg shadow-sm transition-all duration-300 ${
-                isActive ? "bg-blue-600 text-white" : "bg-white text-gray-800 hover:bg-gray-200"
+              className={`px-2 py-0 shadow-sm rounded-sm transition-all duration-200 transform ${
+                isActive
+                  ? "bg-blue-600 text-white"
+                  : "bg-white text-gray-800 hover:bg-gray-100 hover:shadow-lg hover:scale-105 hover:border-2 hover:border-blue-500"
               }`}
             >
               {category.name}
