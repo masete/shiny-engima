@@ -3,14 +3,14 @@
 import React, { useState, ReactNode, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Notifications from "./Notifications/page";
+// import Notifications from "./Notifications/page";
 import { FaShoppingCart, FaHeart } from 'react-icons/fa';
 import { BsShop } from "react-icons/bs";
 import { FaRegBookmark } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa";
 import { ArrowUpWideNarrow, Bookmark, Plus, ShoppingCart } from 'lucide-react';
-import Button from "./Button";
+// import Button from "./Button";
 import { IconBaseProps } from "react-icons/lib";
 
 interface User {
@@ -222,9 +222,9 @@ export default function Rightnav({ sidebarOpen, setSidebarOpen }: any) {
                     }ml-3 font-bold whitespace-nowrap `}
                   >
                       <p className="items-start justify-start text-sm">Messages</p>
-                      <div className="items-center py-6">
+                      {/* <div className="items-center py-6">
                         <Notifications/>  
-                      </div>
+                      </div> */}
                       
                   </span>
                 </span>
@@ -248,9 +248,9 @@ export default function Rightnav({ sidebarOpen, setSidebarOpen }: any) {
                     }ml-3 font-bold whitespace-nowrap `}
                   >
                     <p className="text-sm">Notifications</p>
-                    <div className="items-center py-6">
+                    {/* <div className="items-center py-6">
                       <Notifications/>  
-                    </div>
+                    </div> */}
                   </span>
                 </span>
               </Link>
@@ -300,9 +300,9 @@ export default function Rightnav({ sidebarOpen, setSidebarOpen }: any) {
                     }ml-3 font-bold whitespace-nowrap `}
                   >
                     <p className="text-sm">My Job Alerts!</p>
-                    <div className="items-center py-6">
+                    {/* <div className="items-center py-6">
                         <Notifications/>  
-                      </div>
+                      </div> */}
                   </span>
                 </span>
               </Link>
