@@ -22,18 +22,37 @@ export const fetchProductsByCategory = async (categoryId: number) => {
 };
 
 // Fetch categories with their respective products
-export const fetchCategoriesWithProducts = async () => {
-  const categories = await fetchCategories();
-  const categoriesWithProducts = await Promise.all(
-    categories.map(async (category: Category) => {
-      const products = await fetchProductsByCategory(category.id);
-      return {
-        ...category,
-        products,
-      };
-    })
-  );
-  // console.log("categoriesWithProducts:", categoriesWithProducts); 
-  return categoriesWithProducts;
+// export const fetchCategoriesWithProducts = async () => {
+//   const categories = await fetchCategories();
+//   const categoriesWithProducts = await Promise.all(
+//     categories.map(async (category: Category) => {
+//       const products = await fetchProductsByCategory(category.id);
+//       return {
+//         ...category,
+//         products,
+//       };
+//     })
+//   );
+//   // console.log("categoriesWithProducts:", categoriesWithProducts); 
+//   return categoriesWithProducts;
   
+// };
+
+export const fetchCategoriesWithProducts = async () => {
+  try {
+    const categories = await fetchCategories();
+
+    const categoriesWithProducts = await Promise.all(
+      categories.map(async (category: Category) => {
+        const products = await fetchProductsByCategory(category.id);
+        return { ...category, products };
+      })
+    );
+
+    return categoriesWithProducts;
+  } catch (err) {
+    console.error("Error in fetchCategoriesWithProducts:", err);
+    return []; // Fallback
+  }
 };
+
