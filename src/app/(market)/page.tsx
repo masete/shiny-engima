@@ -2,7 +2,7 @@ import { fetchCategoriesWithProducts } from "../../../actions/productsData";
 import MarketList from "@/components/MarketList";
 import { Category } from "@/lib/types";
 
-export const dynamic = "force-dynamic"; // <-- ADD THIS
+// export const dynamic = "force-dynamic"; // <-- ADD THIS
 
 const Home = async () => {
   const categories = await fetchCategoriesWithProducts();
